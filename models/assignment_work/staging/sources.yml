@@ -89,3 +89,22 @@ sources:
             description: Y coordinate in NY State Plane projection system (NAD 83)
           - name: landmark
             description: Nearby landmark or point of interest
+      - name: source_nyc_open_restaurant_apps
+        description: |
+          NYC Open Restaurant Applications data.
+          One row per application.
+        columns:
+          - name: objectid
+            description: Unique identifier for each application
+          - name: restaurant_name
+            description: Name of the restaurant
+          - name: legal_business_name
+            description: Legal business name
+          - name: borough
+            description: Borough where restaurant is located
+          - name: street
+            description: Street name
+          - name: building_number
+            description: Building number
+          - name: zip
+            description: ZIP code
