@@ -90,7 +90,7 @@ sources:
           - name: landmark
             description: Nearby landmark
 
-  - name: raw_restaurants
+  - name: raw
     description: Open restaurant applications data
     database: ivenzheng-cis-4400-f25
     schema: nyc_hw3_raw_data
