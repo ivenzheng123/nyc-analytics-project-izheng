@@ -46,65 +46,71 @@ sources:
           - name: borough
             description: NYC borough where incident occurred
           - name: bridge_highway_direction
-            description: Direction on bridge or highway (e.g. Northbound)
+            description: Direction on bridge or highway
           - name: bridge_highway_name
-            description: Name of bridge or highway where incident occurred
+            description: Name of bridge or highway
           - name: bridge_highway_segment
             description: Specific segment of bridge or highway
           - name: city
-            description: City name where incident occurred
+            description: City name
           - name: community_board
-            description: NYC Community Board district number
+            description: Community board district
           - name: cross_street_1
-            description: First cross street near incident location
+            description: First cross street
           - name: cross_street_2
-            description: Second cross street near incident location
+            description: Second cross street
           - name: due_date
-            description: Expected due date for request resolution
+            description: Expected resolution date
           - name: facility_type
-            description: Type of facility where incident occurred
+            description: Type of facility
           - name: intersection_street_1
-            description: First street forming intersection where incident occurred
+            description: First intersection street
           - name: intersection_street_2
-            description: Second street forming intersection where incident occurred
+            description: Second intersection street
           - name: open_data_channel_type
-            description: 'How request was submitted (ONLINE, PHONE, MOBILE, etc.)'
+            description: Submission channel type
           - name: park_borough
-            description: Borough of park where incident occurred
+            description: Park borough
           - name: park_facility_name
-            description: Name of park facility where incident occurred
+            description: Park facility name
           - name: resolution_action_updated_date
-            description: Date when resolution action was last updated
+            description: Last update date
           - name: resolution_description
-            description: Description of how the request was resolved
+            description: Resolution description
           - name: road_ramp
-            description: Road ramp identifier where incident occurred
+            description: Road ramp identifier
           - name: status
-            description: 'Current status of request (Open, Closed, In Progress, etc.)'
+            description: Current status
           - name: street_name
-            description: Name of street where incident occurred
+            description: Street name
           - name: x_coordinate_state_plane
-            description: X coordinate in NY State Plane projection system (NAD 83)
+            description: X coordinate
           - name: y_coordinate_state_plane
-            description: Y coordinate in NY State Plane projection system (NAD 83)
+            description: Y coordinate
           - name: landmark
-            description: Nearby landmark or point of interest
+            description: Nearby landmark
+
+  - name: raw_restaurants
+    description: Open restaurant applications data
+    database: ivenzheng-cis-4400-f25
+    schema: nyc_hw3_raw_data
+    tables:
       - name: source_nyc_open_restaurant_apps
         description: NYC open restaurant applications
         columns:
           - name: objectid
-            description: Unique ID
+            description: Unique application ID
             tests:
               - not_null
               - unique
           - name: globalid
-            description: Global ID
+            description: Global unique identifier
           - name: seating_interest_sidewalk
-            description: Sidewalk seating interest
+            description: Seating interest (Sidewalk, Roadway, or Both)
           - name: restaurant_name
-            description: Restaurant name
+            description: Name of the restaurant
           - name: legal_business_name
-            description: Legal business name
+            description: Legal registered business name
           - name: doing_business_as_dba
             description: DBA name
           - name: building_number
@@ -118,8 +124,50 @@ sources:
           - name: business_address
             description: Full business address
           - name: food_service_establishment
-            description: Food service permit
+            description: Food service permit number
           - name: sidewalk_dimensions_length
-            description: Sidewalk length
+            description: Sidewalk seating length
           - name: sidewalk_dimensions_width
-            description: Sidewalk width
+            description: Sidewalk seating width
+          - name: sidewalk_dimensions_area
+            description: Sidewalk seating area
+          - name: roadway_dimensions_length
+            description: Roadway seating length
+          - name: roadway_dimensions_width
+            description: Roadway seating width
+          - name: roadway_dimensions_area
+            description: Roadway seating area
+          - name: approved_for_sidewalk_seating
+            description: Approved for sidewalk seating
+          - name: approved_for_roadway_seating
+            description: Approved for roadway seating
+          - name: qualify_alcohol
+            description: Qualifies for alcohol service
+          - name: sla_serial_number
+            description: SLA serial number
+          - name: sla_license_type
+            description: SLA license type
+          - name: landmark_district_or_building
+            description: Landmark designation
+          - name: landmarkdistrict_terms
+            description: Landmark terms
+          - name: healthcompliance_terms
+            description: Health compliance terms
+          - name: time_of_submission
+            description: Submission timestamp
+          - name: latitude
+            description: Latitude coordinate
+          - name: longitude
+            description: Longitude coordinate
+          - name: community_board
+            description: Community board
+          - name: council_district
+            description: Council district
+          - name: census_tract
+            description: Census tract
+          - name: bin
+            description: Building Identification Number
+          - name: bbl
+            description: Borough-Block-Lot
+          - name: nta
+            description: Neighborhood Tabulation Area
