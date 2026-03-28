@@ -3,7 +3,7 @@ sources:
   - name: raw
     description: Raw data loaded from NYC Open Data
     database: ivenzheng-cis-4400-f25
-    schema: nyc_hw3_raw_data
+    schema: nyc_311_raw_data
     tables:
       - name: source_dot_service_requests_history
         description: |
@@ -68,7 +68,7 @@ sources:
           - name: intersection_street_2
             description: Second street forming intersection where incident occurred
           - name: open_data_channel_type
-            description: How request was submitted (ONLINE, PHONE, MOBILE, etc.)
+            description: 'How request was submitted (ONLINE, PHONE, MOBILE, etc.)'
           - name: park_borough
             description: Borough of park where incident occurred
           - name: park_facility_name
@@ -80,7 +80,7 @@ sources:
           - name: road_ramp
             description: Road ramp identifier where incident occurred
           - name: status
-            description: Current status of request (Open, Closed, In Progress, etc.)
+            description: 'Current status of request (Open, Closed, In Progress, etc.)'
           - name: street_name
             description: Name of street where incident occurred
           - name: x_coordinate_state_plane
@@ -90,21 +90,36 @@ sources:
           - name: landmark
             description: Nearby landmark or point of interest
       - name: source_nyc_open_restaurant_apps
-        description: |
-          NYC Open Restaurant Applications data.
-          One row per application.
+        description: NYC open restaurant applications
         columns:
           - name: objectid
-            description: Unique identifier for each application
+            description: Unique ID
+            tests:
+              - not_null
+              - unique
+          - name: globalid
+            description: Global ID
+          - name: seating_interest_sidewalk
+            description: Sidewalk seating interest
           - name: restaurant_name
-            description: Name of the restaurant
+            description: Restaurant name
           - name: legal_business_name
             description: Legal business name
-          - name: borough
-            description: Borough where restaurant is located
-          - name: street
-            description: Street name
+          - name: doing_business_as_dba
+            description: DBA name
           - name: building_number
             description: Building number
+          - name: street
+            description: Street name
+          - name: borough
+            description: Borough
           - name: zip
             description: ZIP code
+          - name: business_address
+            description: Full business address
+          - name: food_service_establishment
+            description: Food service permit
+          - name: sidewalk_dimensions_length
+            description: Sidewalk length
+          - name: sidewalk_dimensions_width
+            description: Sidewalk width
