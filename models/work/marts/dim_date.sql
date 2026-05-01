@@ -1,5 +1,3 @@
--- models/work/marts/core/dim_date.sql
-
 WITH all_dates AS (
 
     SELECT DISTINCT CAST(created_date AS DATE) AS full_date
